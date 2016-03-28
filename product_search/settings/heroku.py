@@ -35,5 +35,5 @@ TEMPLATES = (
         },
     },
 )
-Status API Training Shop Blog About
+
 
