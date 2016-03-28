@@ -8,4 +8,6 @@ def search_flipkart(request):
 	equest.add_header('Fk-Affiliate-Id', 'manavbhar')
 	equest.add_header('Fk-Affiliate-Token','7dfa8bde88654fd1952affc843a76cc5')
 	contents = urllib.request.urlopen(equest).read()
-	return JsonResponse(contents,safe=False)
+	html = '<h2>I m here re just checking you out</h2>'
+	return HttpResponse(html)
+	#return JsonResponse(contents,safe=False)
