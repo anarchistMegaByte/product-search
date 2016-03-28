@@ -23,6 +23,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "x52kh2*s)eshp=&nh$u^341lz-56w=0kgx+busjk1-kes&4yza"
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Application definition
 
@@ -33,7 +35,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'search',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,6 +50,22 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'product_search.urls'
 
+TEMPLATES = (
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+            'debug': DEBUG,
+        },
+    },
+)
 
 WSGI_APPLICATION = 'product_search.wsgi.application'
 
@@ -65,6 +82,16 @@ DATABASES = {
 }
 '''
 
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'django_db',                      
+       'USER': 'django_login',                   
+       'PASSWORD': 'manav1993',              
+       'HOST': 'localhost',                      
+       'PORT': '5432',           
+   }
+}
 
 AUTH_PASSWORD_VALIDATORS = (
     {
@@ -90,6 +117,9 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# Update database configuration with $DATABASE_URL.
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
