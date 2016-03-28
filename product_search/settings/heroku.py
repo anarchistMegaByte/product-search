@@ -1,4 +1,4 @@
-from product_search.settings.base import *
+from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
