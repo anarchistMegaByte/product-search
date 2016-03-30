@@ -1,7 +1,7 @@
 from product_search.settings.base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 DATABASES = {
    'default': {
