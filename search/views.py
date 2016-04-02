@@ -14,10 +14,11 @@ def search_flipkart(request):
 	return JsonResponse(contents,safe=False)
 
 def get_text(request):
+	print(request.method)
 	if request.method == 'POST':
 		json_object = request.body
-		print(body)
-	else:
+		print(json_object)
+	elif request.method == 'GET':
 		print("cool")
 		contents1 = {"Name":"BhenChod I m In"}
 	return JsonResponse(contents1,safe=False)	
