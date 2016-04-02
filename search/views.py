@@ -18,7 +18,7 @@ def get_text(request):
 	print(request)
 	if request.method == 'POST':
 		print(request.body)
-	contents1 = {"name":"Fuck u POSt"}	
+	contents1 = {"name":"Yolo so"}	
 	return JsonResponse(contents1, safe=False)
 
 		
