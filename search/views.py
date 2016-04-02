@@ -14,9 +14,8 @@ def search_flipkart(request):
 	return JsonResponse(contents,safe=False)
 
 def get_text(request):
-	print(request.method)
-	json_object = request.body
-	print(json_object + 'maa chuda')
+	print(request)
+	contents1 = {"name":"djaslkd"}
 	return JsonResponse(contents1,safe=False)	
 
 	
