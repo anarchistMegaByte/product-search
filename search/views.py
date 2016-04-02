@@ -13,6 +13,7 @@ def search_flipkart(request):
 	#return HttpResponse(html)
 	return JsonResponse(contents,safe=False)
 
+@csrf_exempt
 def get_text(request):
 	print(request)
 	contents1 = {"name":"djaslkd"}
