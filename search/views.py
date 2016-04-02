@@ -15,8 +15,9 @@ def search_flipkart(request):
 
 @csrf_exempt
 def get_text(request):
-	print(request)
-	contents1 = {"name":"djaslkd"}
-	return JsonResponse(contents1,safe=False)	
+	if request.method == 'POST':
+		print(request.body)
+	contents1 = {"name":"Fuck u POSt"}	
+	return JsonResponse(contents1, safe=False)
 
 	
