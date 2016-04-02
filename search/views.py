@@ -16,6 +16,7 @@ def search_flipkart(request):
 @csrf_exempt
 def get_text(request):
 	print(request)
+	print(request.META)
 	if request.method == 'POST':
 		print(request.body)
 	contents1 = {"name":"Yolo so"}	
