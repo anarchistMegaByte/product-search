@@ -15,10 +15,10 @@ def search_flipkart(request):
 
 def get_text(request):
 	print(request.method)
-	if request.method == 'POST':
+	if request.method == "GET":
 		json_object = request.body
 		print(json_object)
-	elif request.method == 'GET':
+	elif request.method == "POST":
 		print("cool")
 		contents1 = {"Name":"BhenChod I m In"}
 	return JsonResponse(contents1,safe=False)	
