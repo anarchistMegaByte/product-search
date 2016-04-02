@@ -17,7 +17,7 @@ def get_text(request):
 	print(request.method)
 	if request.method == "GET":
 		json_object = request.body
-		print(json_object)
+		print(json_object + 'maa chuda')
 	elif request.method == "POST":
 		print("cool")
 		contents1 = {"Name":"BhenChod I m In"}
