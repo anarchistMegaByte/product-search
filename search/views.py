@@ -17,6 +17,7 @@ def search_flipkart(request):
 def get_text(request):
 	if request.method == 'POST':
 		print(request.body)
+		print(request.get('string'))
 	contents1 = {"name":"Fuck u POSt"}	
 	return JsonResponse(contents1, safe=False)
 
