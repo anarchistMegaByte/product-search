@@ -29,13 +29,16 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = (
-	'search',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'search',
+    'users',
 )
 
 MIDDLEWARE_CLASSES = (
