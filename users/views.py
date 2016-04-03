@@ -25,8 +25,8 @@ def register_and_tokenize(request):
 	Register a new user to the UserProfile table
 	"""
 	if request.method == 'POST':
-		received_json_data = json.loads(request.body)
-		
+		received_json_data = json.loads(request.body.decode('utf-8'))
+		print(received_json_data)
 		try:
 			user = User.objects.create_user(_return_json_value(received_json_data,'userName'), _return_json_value(received_json_data,'userEmail'), _return_json_value(received_json_data,'userPassword'))
 		except:
