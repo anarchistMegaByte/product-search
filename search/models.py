@@ -12,20 +12,16 @@ class Device(models.Model):
 	
 	#product attributes
 	price = models.BigIntegerField("Product Price",max_length=100, blank=True, null=True)
-	brand = models.CharField("Product Brand",max_length=100, db_index=True, blank=True, null=True)
 	listPrice = models.BigIntegerField("Product List Price",max_length=100, blank=True, null=True)
 	discount = models.CharField("Discount",max_length=10, blank=True, null=True)
 	name = models.CharField("Product Name",max_length=500, db_index=True, blank=True, null=True)
 	url = models.CharField("Product URL",max_length=500, blank=True, null=True)
+	imageLink = models.CharField("Link of Image",max_length=1000, blank=True, null=True)
+	androidLink = models.CharField("Android Link",max_length=1000, blank=True, null=True)
+	productRating = models.CharField("Product Rating",max_length=50, blank=True, null=True)
+	numberRating = models.BigIntegerField("Rating of the Product",max_length=10, blank=True, null=True)
 	description = models.CharField("description",max_length=1000, blank=True, null=True)
 	availability = models.CharField("Availability",max_length=50, blank=True, null=True)
 	color = models.CharField("Colour",max_length=50, blank=True, null=True)
-	
-	#Rating Attributes
-	productRating = models.CharField("Product Rating",max_length=50, blank=True, null=True)
-	numberRating = models.BigIntegerField("Rating of the Product",max_length=10, blank=True, null=True)
-
-	#Link attributes
-	imageLink = models.CharField("Link of Image",max_length=1000, blank=True, null=True)
-	androidLink = models.CharField("Android Link",max_length=1000, blank=True, null=True)
+	brand = models.CharField("Product Brand",max_length=100, db_index=True, blank=True, null=True)
 	referredFrom = models.CharField("Link From Website", max_length=100, blank=True, null=True)
