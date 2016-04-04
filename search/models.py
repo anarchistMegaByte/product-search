@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 # Create your models here.
-class Device(models.Model):
+class ProductInformation(models.Model):
 	#product category attributes
 	category = models.CharField("Product Category",max_length=500, blank=True, null=True)
 	subCategory = models.CharField("Product Category",max_length=500, blank=True, null=True)
