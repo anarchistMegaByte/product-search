@@ -6,7 +6,6 @@ class Device(models.Model):
 	category = models.CharField("Product Category", blank=True, null=True)
 	subCategory = models.CharField("Product Category", blank=True, null=True)
 	type = models.CharField("Product Type", blank=True, null=True)
-	date_sale = models.DateTimeField("Date of Sale", default=datetime.now, blank=True, null=True)
 	gender = models.CharField("Gender", blank=True, null=True)
 	
 	#product attributes
