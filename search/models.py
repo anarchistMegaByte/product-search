@@ -11,10 +11,10 @@ class Device(models.Model):
 	gender = models.CharField("Gender",max_length=1, blank=True, null=True)
 	
 	#product attributes
-	price = models.BigIntegerField("Product Price", blank=True, null=True)
+	price = models.BigIntegerField("Product Price",max_length=100, blank=True, null=True)
 	brand = models.CharField("Product Brand",max_length=100, db_index=True, blank=True, null=True)
-	listPrice = models.BigIntegerField("Product List Price", blank=True, null=True)
-	discount = models.BigIntegerField("Discount",max_length=10, blank=True, null=True)
+	listPrice = models.BigIntegerField("Product List Price",max_length=100, blank=True, null=True)
+	discount = models.CharField("Discount",max_length=10, blank=True, null=True)
 	name = models.CharField("Product Name",max_length=500, db_index=True, blank=True, null=True)
 	url = models.CharField("Product URL",max_length=500, blank=True, null=True)
 	description = models.CharField("description",max_length=1000, blank=True, null=True)
@@ -23,7 +23,7 @@ class Device(models.Model):
 	
 	#Rating Attributes
 	productRating = models.CharField("Product Rating",max_length=50, blank=True, null=True)
-	numberRating = models.BigIntegerField("Rating of the Product", blank=True, null=True)
+	numberRating = models.BigIntegerField("Rating of the Product",max_length=10 blank=True, null=True)
 
 	#Link attributes
 	imageLink = models.CharField("Link of Image",max_length=1000, blank=True, null=True)
