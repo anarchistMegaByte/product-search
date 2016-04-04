@@ -5,27 +5,27 @@ from datetime import datetime
 # Create your models here.
 class Device(models.Model):
 	#product category attributes
-	category = models.CharField("Product Category", blank=True, null=True)
-	subCategory = models.CharField("Product Category", blank=True, null=True)
-	type = models.CharField("Product Type", blank=True, null=True)
-	gender = models.CharField("Gender", blank=True, null=True)
+	category = models.CharField("Product Category",max_length=500, blank=True, null=True)
+	subCategory = models.CharField("Product Category",max_length=500, blank=True, null=True)
+	type = models.CharField("Product Type",max_length=500, blank=True, null=True)
+	gender = models.CharField("Gender",max_length=1, blank=True, null=True)
 	
 	#product attributes
 	price = models.BigIntegerField("Product Price", blank=True, null=True)
-	brand = models.CharField("Product Brand", db_index=True, blank=True, null=True)
+	brand = models.CharField("Product Brand",max_length=100, db_index=True, blank=True, null=True)
 	listPrice = models.BigIntegerField("Product List Price", blank=True, null=True)
-	discount = models.BigIntegerField("Discount", blank=True, null=True)
-	name = models.CharField("Product Name", db_index=True, blank=True, null=True)
-	url = models.CharField("Product URL", blank=True, null=True)
-	description = models.CharField("description", blank=True, null=True)
-	availability = models.CharField("Availability", blank=True, null=True)
-	color = models.CharField("Colour", blank=True, null=True)
+	discount = models.BigIntegerField("Discount",max_length=10, blank=True, null=True)
+	name = models.CharField("Product Name",max_length=500, db_index=True, blank=True, null=True)
+	url = models.CharField("Product URL",max_length=500, blank=True, null=True)
+	description = models.CharField("description",max_length=1000, blank=True, null=True)
+	availability = models.CharField("Availability",max_length=50, blank=True, null=True)
+	color = models.CharField("Colour",max_length=50, blank=True, null=True)
 	
 	#Rating Attributes
-	productRating = models.CharField("Product Rating", blank=True, null=True)
+	productRating = models.CharField("Product Rating",max_length=50, blank=True, null=True)
 	numberRating = models.BigIntegerField("Rating of the Product", blank=True, null=True)
 
 	#Link attributes
-	imageLink = models.CharField("Link of Image", blank=True, null=True)
-	androidLink = models.CharField("Android Link", blank=True, null=True)
-	referredFrom = models.CharField("Link From Website", blank=True, null=True)
+	imageLink = models.CharField("Link of Image",max_length=1000, blank=True, null=True)
+	androidLink = models.CharField("Android Link",max_length=1000, blank=True, null=True)
+	referredFrom = models.CharField("Link From Website", max_length=100, blank=True, null=True)
