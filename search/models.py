@@ -23,7 +23,7 @@ class Device(models.Model):
 	
 	#Rating Attributes
 	productRating = models.CharField("Product Rating",max_length=50, blank=True, null=True)
-	numberRating = models.BigIntegerField("Rating of the Product",max_length=10 blank=True, null=True)
+	numberRating = models.BigIntegerField("Rating of the Product",max_length=10, blank=True, null=True)
 
 	#Link attributes
 	imageLink = models.CharField("Link of Image",max_length=1000, blank=True, null=True)
