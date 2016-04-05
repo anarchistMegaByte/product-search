@@ -34,4 +34,4 @@ def get_results(request):
 		return_dict[str(i+1)] = products.values()[i]
 	#products_list = json.dumps(list(products), cls=DjangoJSONEncoder)
 	#products_json = json.loads(products_list)
-	return JsonResponse(products_json, safe=False)
+	return JsonResponse(return_dict, safe=False)
