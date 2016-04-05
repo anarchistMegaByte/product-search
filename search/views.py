@@ -3,6 +3,8 @@ import urllib.request
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.core.serializers.json import DjangoJSONEncoder
+from .models  import ProductInformation
 # Create your views here.
 
 def search_flipkart(request):
@@ -13,13 +15,20 @@ def search_flipkart(request):
 	#return HttpResponse(html)
 	return JsonResponse(contents,safe=False)
 
+
 @csrf_exempt
 def get_text(request):
 	print(request)
 	print(request.META)
 	if request.method == 'POST':
 		print(request.body)
-	contents1 = {"name":"Yolo so"}	
+	contents1 = {"name":"Yolo so"}
 	return JsonResponse(contents1, safe=False)
 
-		
+
+@csrf_exempt
+def get_results(request):
+	products = ProductInformation.objects.filter(pk__gt=10).values_list('id', 'name', 'referredFrom', 'price', 'listPrice', 'imageLink')[:10]
+	products_list = json.dumps(list(products), cls=DjangoJSONEncoder)
+	products_json = json.loads(products_list)
+	return JsonResponse(products_json, safe=False)
