@@ -31,7 +31,7 @@ def get_results(request):
 	products = ProductInformation.objects.filter(pk__gt=10).values_list('id', 'name', 'referredFrom', 'price', 'listPrice', 'imageLink')[:10]
 	return_dict = {}
 	for i in range(len(products.values())):
-		return_dict[str(i+1)] = products.values()[i]
+		return_dict[i+1] = products.values()[i]
 	#products_list = json.dumps(list(products), cls=DjangoJSONEncoder)
 	#products_json = json.loads(products_list)
 	return JsonResponse(return_dict, safe=False)
