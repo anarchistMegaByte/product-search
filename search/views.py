@@ -28,7 +28,7 @@ def get_text(request):
 
 @csrf_exempt
 def get_results(request):
-	products = ProductInformation.objects.filter(pk__gt=10).values_list('id', 'name', 'referredFrom', 'price', 'listPrice', 'imageLink')[:10]
+	products = ProductInformation.objects.filter(pk__gt=10)[:10]
 	
 	return_dict = {}
 	for i in range(len(products.values())):
