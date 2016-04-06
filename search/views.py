@@ -29,9 +29,15 @@ def get_text(request):
 @csrf_exempt
 def get_results(request):
 	products = ProductInformation.objects.filter(pk__gt=10).values_list('id', 'name', 'referredFrom', 'price', 'listPrice', 'imageLink')[:10]
+	
 	return_dict = {}
 	for i in range(len(products.values())):
-		return_dict[i+1] = products.values()[i]
+		return_dict[i+1] = { 'id'               : products[i].id               ,
+		                     'name'             : products[i].name             ,
+		                     'referredFrom'     : products[i].referredFrom     ,
+		                     'price'            : products[i].price            ,
+		                     'listPrice'        : products[i].listPrice        ,
+		                     'imageLink'        : products[i].imageLink        } 
 	#products_list = json.dumps(list(products), cls=DjangoJSONEncoder)
 	#products_json = json.loads(products_list)
 	return JsonResponse(return_dict, safe=False)
