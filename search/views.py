@@ -23,7 +23,7 @@ def get_text(request):
 	#print(type(request.body.decode('utf-8')))
 	text = request.body.decode('utf-8')
 	print(text['string'].replace('\n', ' '))
-	if request.method == 'POST':
+	#if request.method == 'POST':
 		#print(request.body)
 	contents1 = {"name":"Yolo so"	}
 	return JsonResponse(contents1, safe=False)
