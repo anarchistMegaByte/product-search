@@ -22,7 +22,7 @@ def get_text(request):
 	#print(request.META)
 	#print(type(request.body.decode('utf-8')))
 	text = request.body.decode('utf-8')
-	print(text.replace('\n', ' '))
+	print(text['string'].replace('\n', ' '))
 	if request.method == 'POST':
 		#print(request.body)
 	contents1 = {"name":"Yolo so"	}
