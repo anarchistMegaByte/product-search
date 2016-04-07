@@ -23,7 +23,10 @@ def get_text(request):
 	#print(type(request.body.decode('utf-8')))
 	text = request.body.decode('utf-8')
 	t_j = json.loads(text)
-	print(t_j['string'].replace('\n', ' '))
+	string_from_tag = t_j['string'].replace('\n', ' ')
+	l = string_from_tag.split()
+	print(string_from_tag)
+	print(l)
 	#if request.method == 'POST':
 		#print(request.body)
 	contents1 = {"name":"Yolo so"	}
