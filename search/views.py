@@ -154,7 +154,7 @@ def get_text(request):
 			products = ProductInformation.objects.filter(pk=i)[:1]
 			return_dict[count] = {
 							 'Error Code'       : "200"                        ,
-							 'id'               : products[0].auto_id               ,
+							 'id'               : products[0].id               ,
 		                     'name'             : products[0].name             ,
 		                     'referredFrom'     : products[0].referredFrom     ,
 		                     'price'            : products[0].price            ,
@@ -211,7 +211,7 @@ def algorithm(brand, cat, sub):
 			#is_subCategory_present = True
 			for i in range(items_s.count()):
 				#subCategory_id.append(items_s[i].auto_id)
-				three[items_s[i].auto_id] = items_s[i].listPrice
+				three[items_s[i].id] = items_s[i].listPrice
 				#creating one sinle list including both 
 				#send.append(items_s[i].auto_id)
 		else:
@@ -227,7 +227,7 @@ def algorithm(brand, cat, sub):
 			#print(str(items_c.count()))
 			for i in range(items_c.count()):
 				#category_id.append(items_c[i].auto_id)
-				two[items_c[i].auto_id] = items_c[i].listPrice
+				two[items_c[i].id] = items_c[i].listPrice
 				#send.append(items_c[i].auto_id)
 		else:
 			print("No matching Category found")
@@ -240,7 +240,7 @@ def algorithm(brand, cat, sub):
 	for k,v in gen1:
 		sorted_three.append(k)
 
-	print(sorted_three)
+	print("sortedThree---" + str(sorted_three))
 
 	sorted_two = []
 	gen3 = ((k, two[k]) for k in sorted(two, key=two.get, reverse=False))
@@ -248,7 +248,7 @@ def algorithm(brand, cat, sub):
 	for k,v in gen3:
 		sorted_two.append(k)
 
-	print(sorted_two)
+	print("sortedTwo---" + str(sorted_two))
 
 	
 	'''
