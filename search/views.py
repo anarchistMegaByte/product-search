@@ -482,7 +482,7 @@ def get_text(request):
 			#print(products[0].listPrice)
 			return_dict[count] = {
 							 'Error Code'       : "200"                        ,
-							 'id'               : products[0].auto_id          ,
+							 'id'               : products[0].id          ,
 		                     'name'             : products[0].name             ,
 		                     'referredFrom'     : products[0].referredFrom     ,
 		                     'price'            : products[0].price            ,
